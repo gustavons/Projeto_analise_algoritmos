@@ -1,0 +1,26 @@
+set terminal postscript eps enhanced 18
+set encoding iso_8859_1
+
+set xlabel 'Tamanho da Entrada (un)'
+set ylabel 'Tempo (ns)'
+
+set key top left
+
+set output 'bubble_selection_insertion.png'
+plot 0 with boxes notitle,\
+'bubble.txt' u 1:2:4 with errorlines pt 4 ps 3 lt 1 lw 3 title 'Bubble-Sort',\
+'selection.txt' u 1:2:4 with errorlines pt 6 ps 3 lt 3 lw 3 title 'Selection-Sort',\
+'insertion.txt' u 1:2:4 with errorlines pt 8 ps 3 lt 5 lw 3 title 'Insertion-Sort'
+
+set output 'merge_quick.png'
+plot 0 with boxes notitle,\
+'merge.txt' u 1:2:4 with errorlines pt 4 ps 3 lt 1 lw 3 title 'Merge-Sort',\
+'quick.txt' u 1:2:4 with errorlines pt 6 ps 3 lt 3 lw 3 title 'Quick-Sort'
+
+set output 'all.png'
+plot 0 with boxes notitle,\
+'bubble.txt' u 1:2:4 with errorlines pt 4 ps 3 lt 1 lw 3 title 'Bubble-Sort',\
+'selection.txt' u 1:2:4 with errorlines pt 6 ps 3 lt 3 lw 3 title 'Selection-Sort',\
+'insertion.txt' u 1:2:4 with errorlines pt 8 ps 3 lt 5 lw 3 title 'Insertion-Sort',\
+'merge.txt' u 1:2:4 with errorlines pt 10 ps 3 lt 7 lw 3 title 'Merge-Sort',\
+'quick.txt' u 1:2:4 with errorlines pt 12 ps 3 lt 9 lw 3 title 'Quick-Sort'

@@ -26,7 +26,7 @@ public class MaximumSubArrayDP {
 
     public static void main(String[] args) {
         // Parametros de execução
-        int tamanhoArray = 1000;
+        int tamanhoArray = 4000;
         int qtdTempos =50;
 
         // Iicializações
