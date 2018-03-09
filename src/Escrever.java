@@ -11,13 +11,13 @@ public class Escrever {
         this.nome = nome;
     }
 
-    public void fileWrite(long[] tempo, int tamanho){
+    public void fileWrite(long[][] tempo){
 
         try {
-            File f = new File("tempos/"+nome+"_"+tamanho+"Elementos.txt");
+            File f = new File("tempos/"+nome+"_tempos.csv");
             FileWriter fw = new FileWriter(f);
-            for(int i = 0; i< tempo.length; i++){
-                fw.write(tempo[i]+"\n");
+            for(int i = 0; i< 50; i++){
+                fw.write(tempo[0][i]+","+tempo[1][i]+","+tempo[2][i]+","+tempo[3][i]+","+tempo[4][i]+","+"\n");
 
             }
 
