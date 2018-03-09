@@ -25,35 +25,41 @@ public class MaximumSubArrayDP {
     }
 
     public static void main(String[] args) {
-        // Parametros de execução
-        int tamanhoArray = 4000;
-        int qtdTempos =50;
+        for (int j = 1; j<=5; j++){
 
-        // Iicializações
-        Random random = new Random();
-        long[] tempo = new long [qtdTempos];
-        MaximumSubArrayDP maximumSubArrayDP = new MaximumSubArrayDP();
-        Escrever escrever = new Escrever("MaxSubDynamicPrograming");
 
-        // Array
-        int arrA[] = new int[tamanhoArray];
-        for (int i=0; i<arrA.length; i++) {
-            arrA[i] = -25 +random.nextInt(50);
+            // Parametros de execução
+            int tamanhoArray = 1000 * j;
+            int qtdTempos = 50;
+
+            // Iicializações
+            Random random = new Random();
+            long[] tempo = new long[qtdTempos];
+            MaximumSubArrayDP maximumSubArrayDP = new MaximumSubArrayDP();
+            Escrever escrever = new Escrever("MaxSubDynamicPrograming");
+
+            // Array
+            int arrA[] = new int[tamanhoArray];
+
+
+            // Captura de tempos
+            for (int k = 0; k < qtdTempos; k++) {
+                for (int i = 0; i < arrA.length; i++) {
+                    arrA[i] = -25 + random.nextInt(50);
+                }
+
+                long tempoInicial = System.nanoTime();
+
+                maximumSubArrayDP.solve(arrA);
+
+                long tempoFinal = System.nanoTime();
+
+                tempo[k] = tempoFinal - tempoInicial;
+            }
+
+            // Escrever no arquivo
+            escrever.fileWrite(tempo, arrA.length);
+            System.out.println("\nMaximum subarray is  " + maximumSubArrayDP.solve(arrA));
         }
-
-        // Captura de tempos
-        for (int k = 0; k < qtdTempos; k++) {
-            long tempoInicial = System.nanoTime();
-
-            maximumSubArrayDP.solve(arrA);
-
-            long tempoFinal = System.nanoTime();
-
-            tempo[k] = tempoFinal - tempoInicial;
-        }
-
-        // Escrever no arquivo
-        escrever.fileWrite(tempo, arrA.length);
-        System.out.println("\nMaximum subarray is  " + maximumSubArrayDP.solve(arrA));
     }
 }

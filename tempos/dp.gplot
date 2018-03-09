@@ -1,0 +1,17 @@
+set terminal postscript eps enhanced 18
+set encoding iso_8859_1
+
+set xlabel 'Tamanho da Entrada (un)'
+set ylabel 'Tempo (ns)'
+
+set grid
+set xtics 1000
+set xrange [-10:5500]
+set yrange[-10:1300000]
+
+
+set key top left
+
+set output 'dpv.eps'
+plot 0 with boxes notitle,\
+'dpv.txt' u 1:2:3 with errorlines pt 8 ps 1 lt 5 lw 3 title 'Dynamic programing'
