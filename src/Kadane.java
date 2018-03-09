@@ -1,6 +1,6 @@
 public class Kadane {
 
-    static int maxSubArraySum(int a[])
+    public int solve(int a[])
     {
         int size = a.length;
         int max_so_far = Integer.MIN_VALUE, max_ending_here = 0;
