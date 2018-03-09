@@ -1,0 +1,17 @@
+set terminal postscript eps enhanced 18
+set encoding iso_8859_1
+
+set xlabel 'Tamanho da Entrada (un)'
+set ylabel 'Tempo (ns)'
+
+set grid
+set xtics 1000
+
+
+set key top left
+
+set output 'brudi.eps'
+plot 0 with boxes notitle,\
+'bruteforce' u 1:2:3 with errorlines pt 4 ps 3 lt 1 lw 3 title 'Brute Force',\
+'dynapro' u 1:2:3 with errorlines pt 8 ps 3 lt 5 lw 3 title 'dynamic programming'
+
