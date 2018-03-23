@@ -1,1 +1,3 @@
-# Projeto_analise_algoritmos
+Projeto analise algoritmos
+
+Gustavo Nogueira de Sousa
